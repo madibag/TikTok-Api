@@ -1143,7 +1143,7 @@ class TikTokApi:
         try:
             api_url = data["video"]["downloadAddr"]
         except Exception:
-            api_url = data["itemInfos"]["video"]["urls"][0]
+            api_url = data['itemInfo']['itemStruct']['video']['downloadAddr']
         return self.get_Video_By_DownloadURL(api_url, proxy=proxy)
 
     def get_Video_By_DownloadURL(self, download_url, **kwargs) -> bytes:
